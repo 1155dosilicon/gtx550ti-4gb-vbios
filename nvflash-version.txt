@@ -1,0 +1,36 @@
+NVIDIA Firmware Update Utility patched by Vipeax
+Copyright (C) 1993-2019, NVIDIA Corporation. All rights reserved.
+
+
+Adapter: GeForce GTX 550 Ti   (10DE,1244,10DE,0939) H:--:NRM  S:00,B:01,D:00,F:00
+
+
+EEPROM ID (C2,2013) : MX MX25L4005A 2.7-3.6V 4096Kx1S, page
+
+Sign-On Message       : NVIDIA GeForce GTX550 TI VGA BIOS
+Build GUID            : Blank
+IFR Subsystem ID      : Blank
+Subsystem Vendor ID   : 0x10DE
+Subsystem ID          : 0x0939
+Version               : 70.26.41.00.00
+Image Hash            : N/A
+Product Name          : GF106B Board - 14280010
+Device Name(s)        : GeForce GTX 550 Ti
+Board ID              : 0xD119
+Vendor ID             : 0x10DE
+Device ID             : 0x1244
+Hierarchy ID          : Normal Board
+Chip SKU              : 200
+Project               : 1428-0010
+Build Date            : 02/16/16
+Modification Date     : 02/03/26
+UEFI Version          : 0x10017
+UEFI Variant ID       : No Version Found or Out-dated ( Unknown x
+UEFI Signer(s)        : Microsoft Corporation UEFI CA 2011
+XUSB-FW Version ID    : N/A
+XUSB-FW Build Time    : N/A
+InfoROM Version       : N/A
+InfoROM Backup        : Not Present
+License Placeholder   : Not Present
+GPU Mode              : N/A
+
