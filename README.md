@@ -4,13 +4,21 @@ Dump da VBIOS de uma **GTX 550 Ti de 4 GB** genérica vendida na China. A NVIDIA
 
 *English summary below.*
 
+## ⚠️ Só para placas com 4 GB REAIS
+
+Esta BIOS é para a versão que tem **4 GB de VRAM de verdade, com barramento de 128 bits**.
+
+Muitas 550 Ti "4 GB" chinesas são **falsas**: têm só 1 GB físico e a BIOS anuncia 4 GB. **Não grave esta ROM numa placa dessas.** Ela informa 4 GB ao sistema, e quando o uso passa de 1 GB a memória que não existe é acessada e **o PC congela inteiro**.
+
+Antes de gravar, confirme que a sua placa tem mesmo 4 GB, por exemplo contando e identificando os chips de memória (o código impresso neles diz a capacidade de cada um). Também dá para rodar um teste de VRAM que preencha toda a memória.
+
 ## Identificação da placa
 
 | Campo | Valor |
 |---|---|
 | GPU | GF106 (Fermi) — GeForce GTX 550 Ti |
 | PCI ID | `10DE:1244`, subsystem `10DE:0939` (ID de referência NVIDIA, sem fabricante) |
-| VRAM informada | 4096 MiB (nvidia-smi) |
+| VRAM | 4096 MiB reais (nvidia-smi), barramento de 128 bits |
 | Versão da VBIOS | `70.26.41.00.00` |
 | Produto / projeto | `GF106B Board - 14280010` / `1428-0010` |
 | Board ID | `0xD119` |
@@ -57,6 +65,10 @@ Testado funcionando com o driver NVIDIA 391.35 (último com suporte a Fermi) no 
 
 ## English
 
-VBIOS dump from a Chinese-market **GeForce GTX 550 Ti 4 GB** (GF106, PCI `10DE:1244`, subsystem `10DE:0939`, version `70.26.41.00.00`). NVIDIA never made a 4 GB 550 Ti, so these are modified boards. The ROM contains a legacy x86 image plus a UEFI GOP image, so the card works with pure UEFI boot (CSM off).
+VBIOS dump from a Chinese-market **GeForce GTX 550 Ti 4 GB** (GF106, PCI `10DE:1244`, subsystem `10DE:0939`, version `70.26.41.00.00`). NVIDIA never made a 4 GB 550 Ti, so these are modified boards.
+
+**Only for cards with REAL 4 GB of VRAM on a 128-bit bus.** Many Chinese "4 GB" 550 Ti cards are fake: they have 1 GB physically and the BIOS reports 4 GB. Do not flash this ROM on one of those. It reports 4 GB, and once usage goes past 1 GB the whole PC freezes. Check your memory chips, or run a full VRAM test, before flashing.
+
+The ROM contains a legacy x86 image plus a UEFI GOP image, so the card works with pure UEFI boot (CSM off).
 
 Dumped with `nvflash64 --save` (nvflash 5.590.0, patched). **You must use "NVIDIA NVFlash with Board Id Mismatch Disabled"** (Vipeax's patched build, on TechPowerUp): the stock nvflash fails or crashes on this card because of its modified board ID. Run it as administrator, always back up your own BIOS first and check that your card's IDs match. Flash with `nvflash64 -6 <file>.rom` at your own risk.
