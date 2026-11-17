@@ -40,6 +40,10 @@ Dump feito com `nvflash64 5.590.0` (versão patched por Vipeax) usando `nvflash6
 
 ## Como gravar (por sua conta e risco)
 
+> **Use o "NVIDIA NVFlash with Board Id Mismatch Disabled"** (versão patched por Vipeax, disponível no TechPowerUp), não o nvflash comum. Com o nvflash normal a gravação falha ou trava nesta placa por causa do Board ID modificado. Este dump foi feito com o `nvflash64_patched_5.590.0`.
+
+Rode tudo num prompt **como administrador**.
+
 1. **Faça backup da sua BIOS antes:** `nvflash64 --save minha_bios.rom`
 2. Confira se o PCI ID / subsystem da sua placa bate (`nvflash64 --version`).
 3. Grave: `nvflash64 -6 GTX550Ti-4GB-70.26.41.00.00.rom` (`-6` ignora a diferença de subsystem ID, se houver).
@@ -55,4 +59,4 @@ Testado funcionando com o driver NVIDIA 391.35 (último com suporte a Fermi) no 
 
 VBIOS dump from a Chinese-market **GeForce GTX 550 Ti 4 GB** (GF106, PCI `10DE:1244`, subsystem `10DE:0939`, version `70.26.41.00.00`). NVIDIA never made a 4 GB 550 Ti, so these are modified boards. The ROM contains a legacy x86 image plus a UEFI GOP image, so the card works with pure UEFI boot (CSM off).
 
-Dumped with `nvflash64 --save` (nvflash 5.590.0, patched). Always back up your own BIOS first and check that your card's IDs match. Flash with `nvflash64 -6 <file>.rom` at your own risk.
+Dumped with `nvflash64 --save` (nvflash 5.590.0, patched). **You must use "NVIDIA NVFlash with Board Id Mismatch Disabled"** (Vipeax's patched build, on TechPowerUp): the stock nvflash fails or crashes on this card because of its modified board ID. Run it as administrator, always back up your own BIOS first and check that your card's IDs match. Flash with `nvflash64 -6 <file>.rom` at your own risk.
